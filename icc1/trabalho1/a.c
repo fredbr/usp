@@ -1,17 +1,16 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include <unistd.h>
 
 #define MAX_VALS 10
 
 // para ter o tempo entre as sequencias e 
-// limpar a linha deve-se remover esse define
-#define RUNCODES
-
-int vals[MAX_VALS];
+// limpar a linha deve-se ter esse define
+// #define NRUNCODES
 
 void clean_line() {
-#ifndef RUNCODES
+#ifdef NRUNCODES
 	printf("\r                                        "
 		     "                                        \r");
 #else
@@ -19,13 +18,13 @@ void clean_line() {
 #endif
 }
 
-void generate_sequence(int num_vals) {
+void generate_sequence(int vals[], int num_vals) {
 	for (int i = 0; i < num_vals; i++) {
 		vals[i] = rand()%10;
 	}
 }
 
-void print_sequence(int num_vals, int timeout) {
+void print_sequence(int vals[], int num_vals, int timeout) {
 	for (int i = 0; i < num_vals; i++) {
 		printf("%d", vals[i]);
 
@@ -34,7 +33,7 @@ void print_sequence(int num_vals, int timeout) {
 	}
 	fflush(stdout);
 
-#ifndef RUNCODES
+#ifdef NRUNCODES
 	sleep(timeout);
 #endif
 
@@ -42,6 +41,7 @@ void print_sequence(int num_vals, int timeout) {
 }
 
 int main() {
+	int vals[MAX_VALS];
 	int seed;
 	char level;
 
@@ -77,14 +77,14 @@ int main() {
 
 	for (int seq = 1; seq <= num_seq && num_tries > 0; seq++) {
 
-		generate_sequence(num_vals);
+		generate_sequence(vals, num_vals);
 
 		int points_try = num_vals*10;
 
 		while (num_tries > 0) {
 
 			printf("Sequencia #%d:\n", seq);
-			print_sequence(num_vals, timeout);
+			print_sequence(vals, num_vals, timeout);
 
 			int ok = true;
 			for (int i = 0; i < num_vals; i++) {
