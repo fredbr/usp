@@ -50,13 +50,15 @@ void add_word(Word bag[], char* word) {
 }
 
 // tipos de pergunta
-enum {
+enum Pergunta_t {
 	PALAVRA,
 	PORCENTAGEM
 };
 
+typedef enum Pergunta_t PerguntaType;
+
 // retorna qual o tipo da pergunta atual
-int op_type(char* query) {
+PerguntaType op_type(char* query) {
 	if (strncmp(query, "palavra", sizeof("palavra")-1) == 0) {
 		return PALAVRA;
 	}
@@ -71,15 +73,17 @@ void strip(char *word) {
 }
 
 // tipos de palavra
-enum {
+enum Word_t {
 	GOOD,
 	BAD,
 	NEG,
 	NEUTRAL
 };
 
+typedef enum Word_t WordType;
+
 // encontra para cada tipo de palavra qual o seu efeito na frase
-int parse_word(char *word) {
+WordType parse_word(char *word) {
 	static char *good_words[12] = {"bom", "maravilhoso", "otimo", "sensacional",
 	                               "excelente", "adorei", "gostei", "amei", 
 	                               "eficiente", "boa", "maravilhosa", "otima"};
@@ -140,7 +144,7 @@ int main() {
 
 			add_word(atual->bag, buf);
 
-			int type = parse_word(buf);
+			WordType type = parse_word(buf);
 
 			// analiza o tipo da palavra e acha o efeito dela na frase
 			switch (type) {
@@ -176,7 +180,7 @@ int main() {
 		char buf[100];
 		scanf(" %[^\n]", buf);
 
-		int op = op_type(buf);
+		PerguntaType op = op_type(buf);
 
 		switch (op) {
 			case PALAVRA: {
