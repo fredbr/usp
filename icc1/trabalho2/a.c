@@ -200,12 +200,12 @@ int main() {
 			case PORCENTAGEM: {
 				char produto[21], tipo[21];
 
-				strip(produto);
-				strip(tipo);
-
 				// encontra o produto atual
 				sscanf(buf, "quantos %s em %[^\n\r] ", tipo, produto);
 				Produto *atual = find_product(products, size_products, produto);
+
+				strip(produto);
+				strip(tipo);
 
 				// analiza o que a pergunta atual quer e mostra a resposta
 				if (strcmp("positivos", tipo) == 0)

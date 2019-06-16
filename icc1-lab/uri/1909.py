@@ -17,7 +17,7 @@ def factor(x):
 for _ in range(t):
 	k = rd.randint(1, 10000)
 	div = factor(k)
-	n = rd.randint(max(len(div)-4, 0), len(div)+5)
+	n = rd.randint(max(len(div)-4, 1), len(div)+5)
 
 	while n > len(div):
 		div.append(rd.randint(1, k))
