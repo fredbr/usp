@@ -1,0 +1,1299 @@
+Analysis & Synthesis report for ULA
+Wed Jun 19 11:21:38 2019
+Quartus II 64-Bit Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: LPM_MUX:inst4
+ 10. Parameter Settings for User Entity Instance: ULA_adder:inst|LPM_MUX:inst8
+ 11. Parameter Settings for User Entity Instance: ULA_adder:inst|LPM_CONSTANT:inst7
+ 12. Parameter Settings for User Entity Instance: ULA_adder:inst|LPM_CONSTANT:inst6
+ 13. Parameter Settings for User Entity Instance: ULA_mult:inst7|LPM_MUX:inst8
+ 14. Parameter Settings for User Entity Instance: ULA_mult:inst7|LPM_CONSTANT:inst7
+ 15. Parameter Settings for User Entity Instance: ULA_mult:inst7|LPM_CONSTANT:inst6
+ 16. Parameter Settings for User Entity Instance: ULA_div:inst1|LPM_MUX:inst9
+ 17. Parameter Settings for User Entity Instance: ULA_div:inst1|LPM_CONSTANT:inst11
+ 18. Parameter Settings for User Entity Instance: ULA_div:inst1|LPM_CONSTANT:inst10
+ 19. Parameter Settings for User Entity Instance: ULA_div:inst1|LPM_MUX:inst8
+ 20. Parameter Settings for User Entity Instance: ULA_div:inst1|LPM_CONSTANT:inst7
+ 21. Parameter Settings for User Entity Instance: ULA_div:inst1|LPM_CONSTANT:inst6
+ 22. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|LPM_MUX:inst4
+ 23. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|LPM_INV:inst2
+ 24. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|LPM_CONSTANT:inst4
+ 25. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|LPM_MUX:inst5
+ 26. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9|LPM_MUX:inst4
+ 27. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9|8BSub:inst3|LPM_INV:inst2
+ 28. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9|8BSub:inst3|LPM_CONSTANT:inst4
+ 29. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9|LPM_MUX:inst5
+ 30. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12|LPM_MUX:inst4
+ 31. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12|8BSub:inst3|LPM_INV:inst2
+ 32. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12|8BSub:inst3|LPM_CONSTANT:inst4
+ 33. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12|LPM_MUX:inst5
+ 34. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst|LPM_MUX:inst4
+ 35. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst|8BSub:inst3|LPM_INV:inst2
+ 36. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst|8BSub:inst3|LPM_CONSTANT:inst4
+ 37. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst|LPM_MUX:inst5
+ 38. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst4
+ 39. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst5
+ 40. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst6
+ 41. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst7
+ 42. Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst8
+ 43. Parameter Settings for User Entity Instance: LPM_MUX:inst11
+ 44. Parameter Settings for User Entity Instance: ULA_display5b:inst3|ULA_display_sig:inst2|LPM_MUX:inst8
+ 45. Parameter Settings for User Entity Instance: ULA_display5b:inst3|ULA_display_sig:inst2|LPM_CONSTANT:inst7
+ 46. Parameter Settings for User Entity Instance: ULA_display5b:inst3|ULA_display_sig:inst2|LPM_CONSTANT:inst6
+ 47. Parameter Settings for User Entity Instance: ULA_display5b:inst5|ULA_display_sig:inst2|LPM_MUX:inst8
+ 48. Parameter Settings for User Entity Instance: ULA_display5b:inst5|ULA_display_sig:inst2|LPM_CONSTANT:inst7
+ 49. Parameter Settings for User Entity Instance: ULA_display5b:inst5|ULA_display_sig:inst2|LPM_CONSTANT:inst6
+ 50. Post-Synthesis Netlist Statistics for Top Partition
+ 51. Elapsed Time Per Partition
+ 52. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jun 19 11:21:38 2019      ;
+; Quartus II 64-Bit Version          ; 14.1.0 Build 186 12/03/2014 SJ Web Edition ;
+; Revision Name                      ; ULA                                        ;
+; Top-level Entity Name              ; ULA                                        ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 259                                        ;
+;     Total combinational functions  ; 259                                        ;
+;     Dedicated logic registers      ; 0                                          ;
+; Total registers                    ; 0                                          ;
+; Total pins                         ; 68                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; ULA                ; ULA                ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------+---------+
+; ula.bdf                          ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/ula.bdf              ;         ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                             ; c:/altera/14.1/quartus/libraries/megafunctions/lpm_mux.tdf      ;         ;
+; aglobal141.inc                   ; yes             ; Megafunction                             ; c:/altera/14.1/quartus/libraries/megafunctions/aglobal141.inc   ;         ;
+; muxlut.inc                       ; yes             ; Megafunction                             ; c:/altera/14.1/quartus/libraries/megafunctions/muxlut.inc       ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                             ; c:/altera/14.1/quartus/libraries/megafunctions/bypassff.inc     ;         ;
+; altshift.inc                     ; yes             ; Megafunction                             ; c:/altera/14.1/quartus/libraries/megafunctions/altshift.inc     ;         ;
+; db/mux_3tc.tdf                   ; yes             ; Auto-Generated Megafunction              ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/db/mux_3tc.tdf       ;         ;
+; ula_adder.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/ula_adder.bdf        ;         ;
+; ula_display.bdf                  ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/ula_display.bdf      ;         ;
+; display.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/display.bdf          ;         ;
+; ula_comp.bdf                     ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/ula_comp.bdf         ;         ;
+; comp12.bdf                       ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/comp12.bdf           ;         ;
+; comp2adder.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/comp2adder.bdf       ;         ;
+; fulladder.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/fulladder.bdf        ;         ;
+; xor3.bdf                         ; yes             ; Megafunction                             ; c:/altera/14.1/quartus/libraries/others/maxplus2/xor3.bdf       ;         ;
+; adder_5.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/adder_5.bdf          ;         ;
+; db/mux_drc.tdf                   ; yes             ; Auto-Generated Megafunction              ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/db/mux_drc.tdf       ;         ;
+; lpm_constant.tdf                 ; yes             ; Megafunction                             ; c:/altera/14.1/quartus/libraries/megafunctions/lpm_constant.tdf ;         ;
+; ula_mult.bdf                     ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/ula_mult.bdf         ;         ;
+; 4bmult.bdf                       ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/4bmult.bdf           ;         ;
+; 4bmadder.bdf                     ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/4bmadder.bdf         ;         ;
+; fulladderand.bdf                 ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/fulladderand.bdf     ;         ;
+; ula_div.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/ula_div.bdf          ;         ;
+; divider.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/divider.bdf          ;         ;
+; 4bitsubmux.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/4bitsubmux.bdf       ;         ;
+; multiplexer.bdf                  ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/multiplexer.bdf      ;         ;
+; ula_sqrt.bdf                     ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/ula_sqrt.bdf         ;         ;
+; 8bsqrt.bdf                       ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/8bsqrt.bdf           ;         ;
+; 8bsqrt2.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/8bsqrt2.bdf          ;         ;
+; db/mux_erc.tdf                   ; yes             ; Auto-Generated Megafunction              ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/db/mux_erc.tdf       ;         ;
+; 8bsub.bdf                        ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/8bsub.bdf            ;         ;
+; 8badder.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/8badder.bdf          ;         ;
+; lpm_inv.tdf                      ; yes             ; Megafunction                             ; c:/altera/14.1/quartus/libraries/megafunctions/lpm_inv.tdf      ;         ;
+; 8bshiftr1.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/8bshiftr1.bdf        ;         ;
+; db/mux_0tc.tdf                   ; yes             ; Auto-Generated Megafunction              ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/db/mux_0tc.tdf       ;         ;
+; ula_display5b.bdf                ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/ula_display5b.bdf    ;         ;
+; ula_display_sig.bdf              ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/11208440.USUARIOS.000/Desktop/ULA/ula_display_sig.bdf  ;         ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 259         ;
+;                                             ;             ;
+; Total combinational functions               ; 259         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 186         ;
+;     -- 3 input functions                    ; 45          ;
+;     -- <=2 input functions                  ; 28          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 259         ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 0           ;
+;     -- Dedicated logic registers            ; 0           ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 68          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; op[0]~input ;
+; Maximum fan-out                             ; 52          ;
+; Total fan-out                               ; 1053        ;
+; Average fan-out                             ; 2.67        ;
++---------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                    ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                               ; Library Name ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
+; |ULA                                    ; 259 (1)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 68   ; 0            ; |ULA                                                                                              ; work         ;
+;    |ULA_adder:inst|                     ; 30 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst                                                                               ; work         ;
+;       |ULA_comp:inst1|                  ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst1                                                                ; work         ;
+;          |Comp12:inst|                  ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst1|Comp12:inst                                                    ; work         ;
+;             |Comp2Adder:inst4|          ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst1|Comp12:inst|Comp2Adder:inst4                                   ; work         ;
+;                |FullAdder:inst1|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst1|Comp12:inst|Comp2Adder:inst4|FullAdder:inst1                   ; work         ;
+;                   |xor3:inst|           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst1|Comp12:inst|Comp2Adder:inst4|FullAdder:inst1|xor3:inst         ; work         ;
+;                |FullAdder:inst2|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst1|Comp12:inst|Comp2Adder:inst4|FullAdder:inst2                   ; work         ;
+;                   |xor3:inst|           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst1|Comp12:inst|Comp2Adder:inst4|FullAdder:inst2|xor3:inst         ; work         ;
+;                |FullAdder:inst3|        ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst1|Comp12:inst|Comp2Adder:inst4|FullAdder:inst3                   ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst1|Comp12:inst|Comp2Adder:inst4|FullAdder:inst3|xor3:inst         ; work         ;
+;       |ULA_comp:inst20|                 ; 11 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst20                                                               ; work         ;
+;          |Comp12:inst|                  ; 11 (5)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst20|Comp12:inst                                                   ; work         ;
+;             |Comp2Adder:inst4|          ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst20|Comp12:inst|Comp2Adder:inst4                                  ; work         ;
+;                |FullAdder:inst1|        ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst20|Comp12:inst|Comp2Adder:inst4|FullAdder:inst1                  ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst20|Comp12:inst|Comp2Adder:inst4|FullAdder:inst1|xor3:inst        ; work         ;
+;                |FullAdder:inst2|        ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst20|Comp12:inst|Comp2Adder:inst4|FullAdder:inst2                  ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst20|Comp12:inst|Comp2Adder:inst4|FullAdder:inst2|xor3:inst        ; work         ;
+;                |FullAdder:inst3|        ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst20|Comp12:inst|Comp2Adder:inst4|FullAdder:inst3                  ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst20|Comp12:inst|Comp2Adder:inst4|FullAdder:inst3|xor3:inst        ; work         ;
+;                |FullAdder:inst4|        ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst20|Comp12:inst|Comp2Adder:inst4|FullAdder:inst4                  ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst20|Comp12:inst|Comp2Adder:inst4|FullAdder:inst4|xor3:inst        ; work         ;
+;       |ULA_comp:inst3|                  ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst3                                                                ; work         ;
+;          |Comp12:inst|                  ; 6 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst3|Comp12:inst                                                    ; work         ;
+;             |Comp2Adder:inst4|          ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst3|Comp12:inst|Comp2Adder:inst4                                   ; work         ;
+;                |FullAdder:inst1|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst3|Comp12:inst|Comp2Adder:inst4|FullAdder:inst1                   ; work         ;
+;                |FullAdder:inst2|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst3|Comp12:inst|Comp2Adder:inst4|FullAdder:inst2                   ; work         ;
+;                |FullAdder:inst|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_comp:inst3|Comp12:inst|Comp2Adder:inst4|FullAdder:inst                    ; work         ;
+;       |ULA_display:inst9|               ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_display:inst9                                                             ; work         ;
+;          |Display:inst|                 ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|ULA_display:inst9|Display:inst                                                ; work         ;
+;       |adder_5:inst|                    ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|adder_5:inst                                                                  ; work         ;
+;          |FullAdder:inst1|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|adder_5:inst|FullAdder:inst1                                                  ; work         ;
+;          |FullAdder:inst2|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|adder_5:inst|FullAdder:inst2                                                  ; work         ;
+;          |FullAdder:inst3|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|adder_5:inst|FullAdder:inst3                                                  ; work         ;
+;          |FullAdder:inst4|              ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|adder_5:inst|FullAdder:inst4                                                  ; work         ;
+;             |xor3:inst|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|adder_5:inst|FullAdder:inst4|xor3:inst                                        ; work         ;
+;          |FullAdder:inst|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_adder:inst|adder_5:inst|FullAdder:inst                                                   ; work         ;
+;    |ULA_display5b:inst3|                ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_display5b:inst3                                                                          ; work         ;
+;       |ULA_display:inst|                ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_display5b:inst3|ULA_display:inst                                                         ; work         ;
+;          |Display:inst|                 ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_display5b:inst3|ULA_display:inst|Display:inst                                            ; work         ;
+;    |ULA_display:inst8|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_display:inst8                                                                            ; work         ;
+;       |Display:inst|                    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_display:inst8|Display:inst                                                               ; work         ;
+;    |ULA_div:inst1|                      ; 28 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1                                                                                ; work         ;
+;       |Divider:inst2|                   ; 26 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2                                                                  ; work         ;
+;          |4BITSubMux:inst1|             ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst1                                                 ; work         ;
+;             |4BMAdder:inst|             ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst1|4BMAdder:inst                                   ; work         ;
+;                |FullAdderAnd:inst2|     ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst1|4BMAdder:inst|FullAdderAnd:inst2                ; work         ;
+;                   |FullAdder:inst|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst1|4BMAdder:inst|FullAdderAnd:inst2|FullAdder:inst ; work         ;
+;                |FullAdderAnd:inst3|     ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst1|4BMAdder:inst|FullAdderAnd:inst3                ; work         ;
+;                   |FullAdder:inst|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst1|4BMAdder:inst|FullAdderAnd:inst3|FullAdder:inst ; work         ;
+;                |FullAdderAnd:inst|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst1|4BMAdder:inst|FullAdderAnd:inst                 ; work         ;
+;                   |FullAdder:inst|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst1|4BMAdder:inst|FullAdderAnd:inst|FullAdder:inst  ; work         ;
+;             |Multiplexer:inst4|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst1|Multiplexer:inst4                               ; work         ;
+;             |Multiplexer:inst5|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst1|Multiplexer:inst5                               ; work         ;
+;          |4BITSubMux:inst2|             ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst2                                                 ; work         ;
+;             |4BMAdder:inst|             ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst2|4BMAdder:inst                                   ; work         ;
+;                |FullAdderAnd:inst1|     ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst2|4BMAdder:inst|FullAdderAnd:inst1                ; work         ;
+;                   |FullAdder:inst|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst2|4BMAdder:inst|FullAdderAnd:inst1|FullAdder:inst ; work         ;
+;                |FullAdderAnd:inst2|     ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst2|4BMAdder:inst|FullAdderAnd:inst2                ; work         ;
+;                   |FullAdder:inst|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst2|4BMAdder:inst|FullAdderAnd:inst2|FullAdder:inst ; work         ;
+;                |FullAdderAnd:inst3|     ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst2|4BMAdder:inst|FullAdderAnd:inst3                ; work         ;
+;                   |FullAdder:inst|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst2|4BMAdder:inst|FullAdderAnd:inst3|FullAdder:inst ; work         ;
+;                |FullAdderAnd:inst|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst2|4BMAdder:inst|FullAdderAnd:inst                 ; work         ;
+;                   |FullAdder:inst|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst2|4BMAdder:inst|FullAdderAnd:inst|FullAdder:inst  ; work         ;
+;             |Multiplexer:inst4|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst2|Multiplexer:inst4                               ; work         ;
+;             |Multiplexer:inst5|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst2|Multiplexer:inst5                               ; work         ;
+;             |Multiplexer:inst6|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst2|Multiplexer:inst6                               ; work         ;
+;          |4BITSubMux:inst3|             ; 10 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3                                                 ; work         ;
+;             |4BMAdder:inst|             ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|4BMAdder:inst                                   ; work         ;
+;                |FullAdderAnd:inst1|     ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|4BMAdder:inst|FullAdderAnd:inst1                ; work         ;
+;                   |FullAdder:inst|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|4BMAdder:inst|FullAdderAnd:inst1|FullAdder:inst ; work         ;
+;                |FullAdderAnd:inst2|     ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|4BMAdder:inst|FullAdderAnd:inst2                ; work         ;
+;                   |FullAdder:inst|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|4BMAdder:inst|FullAdderAnd:inst2|FullAdder:inst ; work         ;
+;                |FullAdderAnd:inst3|     ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|4BMAdder:inst|FullAdderAnd:inst3                ; work         ;
+;                   |FullAdder:inst|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|4BMAdder:inst|FullAdderAnd:inst3|FullAdder:inst ; work         ;
+;                |FullAdderAnd:inst|      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|4BMAdder:inst|FullAdderAnd:inst                 ; work         ;
+;                   |FullAdder:inst|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|4BMAdder:inst|FullAdderAnd:inst|FullAdder:inst  ; work         ;
+;             |Multiplexer:inst4|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|Multiplexer:inst4                               ; work         ;
+;             |Multiplexer:inst5|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|Multiplexer:inst5                               ; work         ;
+;             |Multiplexer:inst6|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|Multiplexer:inst6                               ; work         ;
+;             |Multiplexer:inst7|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|Multiplexer:inst7                               ; work         ;
+;          |4BITSubMux:inst|              ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst                                                  ; work         ;
+;             |4BMAdder:inst|             ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst|4BMAdder:inst                                    ; work         ;
+;                |FullAdderAnd:inst3|     ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst|4BMAdder:inst|FullAdderAnd:inst3                 ; work         ;
+;                   |FullAdder:inst|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst|4BMAdder:inst|FullAdderAnd:inst3|FullAdder:inst  ; work         ;
+;             |Multiplexer:inst4|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|Divider:inst2|4BITSubMux:inst|Multiplexer:inst4                                ; work         ;
+;       |ULA_display:inst4|               ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|ULA_display:inst4                                                              ; work         ;
+;          |Display:inst|                 ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_div:inst1|ULA_display:inst4|Display:inst                                                 ; work         ;
+;    |ULA_mult:inst7|                     ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7                                                                               ; work         ;
+;       |4BMult:inst2|                    ; 30 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2                                                                  ; work         ;
+;          |4BMAdder:inst5|               ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst5                                                   ; work         ;
+;             |FullAdderAnd:inst1|        ; 3 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst5|FullAdderAnd:inst1                                ; work         ;
+;                |FullAdder:inst|         ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst5|FullAdderAnd:inst1|FullAdder:inst                 ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst5|FullAdderAnd:inst1|FullAdder:inst|xor3:inst       ; work         ;
+;             |FullAdderAnd:inst2|        ; 3 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst5|FullAdderAnd:inst2                                ; work         ;
+;                |FullAdder:inst|         ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst5|FullAdderAnd:inst2|FullAdder:inst                 ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst5|FullAdderAnd:inst2|FullAdder:inst|xor3:inst       ; work         ;
+;             |FullAdderAnd:inst3|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst5|FullAdderAnd:inst3                                ; work         ;
+;             |FullAdderAnd:inst|         ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst5|FullAdderAnd:inst                                 ; work         ;
+;                |FullAdder:inst|         ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst5|FullAdderAnd:inst|FullAdder:inst                  ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst5|FullAdderAnd:inst|FullAdder:inst|xor3:inst        ; work         ;
+;          |4BMAdder:inst6|               ; 11 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst6                                                   ; work         ;
+;             |FullAdderAnd:inst1|        ; 3 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst6|FullAdderAnd:inst1                                ; work         ;
+;                |FullAdder:inst|         ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst6|FullAdderAnd:inst1|FullAdder:inst                 ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst6|FullAdderAnd:inst1|FullAdder:inst|xor3:inst       ; work         ;
+;             |FullAdderAnd:inst2|        ; 3 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst6|FullAdderAnd:inst2                                ; work         ;
+;                |FullAdder:inst|         ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst6|FullAdderAnd:inst2|FullAdder:inst                 ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst6|FullAdderAnd:inst2|FullAdder:inst|xor3:inst       ; work         ;
+;             |FullAdderAnd:inst3|        ; 3 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst6|FullAdderAnd:inst3                                ; work         ;
+;                |FullAdder:inst|         ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst6|FullAdderAnd:inst3|FullAdder:inst                 ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst6|FullAdderAnd:inst3|FullAdder:inst|xor3:inst       ; work         ;
+;             |FullAdderAnd:inst|         ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst6|FullAdderAnd:inst                                 ; work         ;
+;                |FullAdder:inst|         ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst6|FullAdderAnd:inst|FullAdder:inst                  ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst6|FullAdderAnd:inst|FullAdder:inst|xor3:inst        ; work         ;
+;          |4BMAdder:inst7|               ; 10 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst7                                                   ; work         ;
+;             |FullAdderAnd:inst1|        ; 3 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst7|FullAdderAnd:inst1                                ; work         ;
+;                |FullAdder:inst|         ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst7|FullAdderAnd:inst1|FullAdder:inst                 ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst7|FullAdderAnd:inst1|FullAdder:inst|xor3:inst       ; work         ;
+;             |FullAdderAnd:inst2|        ; 3 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst7|FullAdderAnd:inst2                                ; work         ;
+;                |FullAdder:inst|         ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst7|FullAdderAnd:inst2|FullAdder:inst                 ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst7|FullAdderAnd:inst2|FullAdder:inst|xor3:inst       ; work         ;
+;             |FullAdderAnd:inst3|        ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst7|FullAdderAnd:inst3                                ; work         ;
+;                |FullAdder:inst|         ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst7|FullAdderAnd:inst3|FullAdder:inst                 ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst7|FullAdderAnd:inst3|FullAdder:inst|xor3:inst       ; work         ;
+;             |FullAdderAnd:inst|         ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst7|FullAdderAnd:inst                                 ; work         ;
+;                |FullAdder:inst|         ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst7|FullAdderAnd:inst|FullAdder:inst                  ; work         ;
+;                   |xor3:inst|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|4BMult:inst2|4BMAdder:inst7|FullAdderAnd:inst|FullAdder:inst|xor3:inst        ; work         ;
+;       |ULA_display:inst5|               ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|ULA_display:inst5                                                             ; work         ;
+;          |Display:inst|                 ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|ULA_display:inst5|Display:inst                                                ; work         ;
+;       |ULA_display:inst9|               ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|ULA_display:inst9                                                             ; work         ;
+;          |Display:inst|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_mult:inst7|ULA_display:inst9|Display:inst                                                ; work         ;
+;    |ULA_sqrt:inst2|                     ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2                                                                               ; work         ;
+;       |8BSqrt:inst|                     ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst                                                                   ; work         ;
+;          |8BSqrt2:inst10|               ; 10 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10                                                    ; work         ;
+;             |8BSub:inst3|               ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3                                        ; work         ;
+;                |8BAdder:inst1|          ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|8BAdder:inst1                          ; work         ;
+;                   |FullAdder:inst3|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|8BAdder:inst1|FullAdder:inst3          ; work         ;
+;                   |FullAdder:inst4|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|8BAdder:inst1|FullAdder:inst4          ; work         ;
+;                   |FullAdder:inst7|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|8BAdder:inst1|FullAdder:inst7          ; work         ;
+;             |lpm_mux:inst4|             ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|lpm_mux:inst4                                      ; work         ;
+;                |mux_erc:auto_generated| ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|lpm_mux:inst4|mux_erc:auto_generated               ; work         ;
+;          |8BSqrt2:inst12|               ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12                                                    ; work         ;
+;             |8BSub:inst3|               ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12|8BSub:inst3                                        ; work         ;
+;                |8BAdder:inst1|          ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12|8BSub:inst3|8BAdder:inst1                          ; work         ;
+;                   |FullAdder:inst8|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12|8BSub:inst3|8BAdder:inst1|FullAdder:inst8          ; work         ;
+;             |lpm_mux:inst4|             ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12|lpm_mux:inst4                                      ; work         ;
+;                |mux_erc:auto_generated| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12|lpm_mux:inst4|mux_erc:auto_generated               ; work         ;
+;          |8BSqrt2:inst9|                ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9                                                     ; work         ;
+;             |8BSub:inst3|               ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9|8BSub:inst3                                         ; work         ;
+;                |8BAdder:inst1|          ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9|8BSub:inst3|8BAdder:inst1                           ; work         ;
+;                   |FullAdder:inst5|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9|8BSub:inst3|8BAdder:inst1|FullAdder:inst5           ; work         ;
+;             |lpm_mux:inst4|             ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9|lpm_mux:inst4                                       ; work         ;
+;                |mux_erc:auto_generated| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9|lpm_mux:inst4|mux_erc:auto_generated                ; work         ;
+;    |lpm_mux:inst11|                     ; 50 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|lpm_mux:inst11                                                                               ; work         ;
+;       |mux_0tc:auto_generated|          ; 50 (50)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|lpm_mux:inst11|mux_0tc:auto_generated                                                        ; work         ;
+;    |lpm_mux:inst4|                      ; 94 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|lpm_mux:inst4                                                                                ; work         ;
+;       |mux_3tc:auto_generated|          ; 94 (94)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|lpm_mux:inst4|mux_3tc:auto_generated                                                         ; work         ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_MUX:inst4 ;
++------------------------+--------------+--------------------+
+; Parameter Name         ; Value        ; Type               ;
++------------------------+--------------+--------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY         ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY       ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE       ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE     ;
+; LPM_WIDTH              ; 28           ; Untyped            ;
+; LPM_SIZE               ; 4            ; Untyped            ;
+; LPM_WIDTHS             ; 2            ; Untyped            ;
+; LPM_PIPELINE           ; 0            ; Untyped            ;
+; CBXI_PARAMETER         ; mux_3tc      ; Untyped            ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped            ;
++------------------------+--------------+--------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_adder:inst|LPM_MUX:inst8 ;
++------------------------+--------------+-----------------------------------+
+; Parameter Name         ; Value        ; Type                              ;
++------------------------+--------------+-----------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                    ;
+; LPM_WIDTH              ; 7            ; Untyped                           ;
+; LPM_SIZE               ; 2            ; Untyped                           ;
+; LPM_WIDTHS             ; 1            ; Untyped                           ;
+; LPM_PIPELINE           ; 0            ; Untyped                           ;
+; CBXI_PARAMETER         ; mux_drc      ; Untyped                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                           ;
++------------------------+--------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_adder:inst|LPM_CONSTANT:inst7 ;
++--------------------+------------------+----------------------------------------+
+; Parameter Name     ; Value            ; Type                                   ;
++--------------------+------------------+----------------------------------------+
+; LPM_WIDTH          ; 7                ; Signed Integer                         ;
+; LPM_CVALUE         ; 63               ; Untyped                                ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                ;
+; CBXI_PARAMETER     ; lpm_constant_ba4 ; Untyped                                ;
++--------------------+------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_adder:inst|LPM_CONSTANT:inst6 ;
++--------------------+------------------+----------------------------------------+
+; Parameter Name     ; Value            ; Type                                   ;
++--------------------+------------------+----------------------------------------+
+; LPM_WIDTH          ; 7                ; Untyped                                ;
+; LPM_CVALUE         ; 127              ; Untyped                                ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                ;
+; CBXI_PARAMETER     ; lpm_constant_fa4 ; Untyped                                ;
++--------------------+------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_mult:inst7|LPM_MUX:inst8 ;
++------------------------+--------------+-----------------------------------+
+; Parameter Name         ; Value        ; Type                              ;
++------------------------+--------------+-----------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                    ;
+; LPM_WIDTH              ; 7            ; Untyped                           ;
+; LPM_SIZE               ; 2            ; Untyped                           ;
+; LPM_WIDTHS             ; 1            ; Untyped                           ;
+; LPM_PIPELINE           ; 0            ; Untyped                           ;
+; CBXI_PARAMETER         ; mux_drc      ; Untyped                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                           ;
++------------------------+--------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_mult:inst7|LPM_CONSTANT:inst7 ;
++--------------------+------------------+----------------------------------------+
+; Parameter Name     ; Value            ; Type                                   ;
++--------------------+------------------+----------------------------------------+
+; LPM_WIDTH          ; 7                ; Signed Integer                         ;
+; LPM_CVALUE         ; 63               ; Untyped                                ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                ;
+; CBXI_PARAMETER     ; lpm_constant_ba4 ; Untyped                                ;
++--------------------+------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_mult:inst7|LPM_CONSTANT:inst6 ;
++--------------------+------------------+----------------------------------------+
+; Parameter Name     ; Value            ; Type                                   ;
++--------------------+------------------+----------------------------------------+
+; LPM_WIDTH          ; 7                ; Untyped                                ;
+; LPM_CVALUE         ; 127              ; Untyped                                ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                ;
+; CBXI_PARAMETER     ; lpm_constant_fa4 ; Untyped                                ;
++--------------------+------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_div:inst1|LPM_MUX:inst9 ;
++------------------------+--------------+----------------------------------+
+; Parameter Name         ; Value        ; Type                             ;
++------------------------+--------------+----------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                   ;
+; LPM_WIDTH              ; 7            ; Untyped                          ;
+; LPM_SIZE               ; 2            ; Untyped                          ;
+; LPM_WIDTHS             ; 1            ; Untyped                          ;
+; LPM_PIPELINE           ; 0            ; Untyped                          ;
+; CBXI_PARAMETER         ; mux_drc      ; Untyped                          ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                          ;
++------------------------+--------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_div:inst1|LPM_CONSTANT:inst11 ;
++--------------------+------------------+----------------------------------------+
+; Parameter Name     ; Value            ; Type                                   ;
++--------------------+------------------+----------------------------------------+
+; LPM_WIDTH          ; 7                ; Signed Integer                         ;
+; LPM_CVALUE         ; 63               ; Untyped                                ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                ;
+; CBXI_PARAMETER     ; lpm_constant_ba4 ; Untyped                                ;
++--------------------+------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_div:inst1|LPM_CONSTANT:inst10 ;
++--------------------+------------------+----------------------------------------+
+; Parameter Name     ; Value            ; Type                                   ;
++--------------------+------------------+----------------------------------------+
+; LPM_WIDTH          ; 7                ; Untyped                                ;
+; LPM_CVALUE         ; 127              ; Untyped                                ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                ;
+; CBXI_PARAMETER     ; lpm_constant_fa4 ; Untyped                                ;
++--------------------+------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_div:inst1|LPM_MUX:inst8 ;
++------------------------+--------------+----------------------------------+
+; Parameter Name         ; Value        ; Type                             ;
++------------------------+--------------+----------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                   ;
+; LPM_WIDTH              ; 7            ; Untyped                          ;
+; LPM_SIZE               ; 2            ; Untyped                          ;
+; LPM_WIDTHS             ; 1            ; Untyped                          ;
+; LPM_PIPELINE           ; 0            ; Untyped                          ;
+; CBXI_PARAMETER         ; mux_drc      ; Untyped                          ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                          ;
++------------------------+--------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_div:inst1|LPM_CONSTANT:inst7 ;
++--------------------+------------------+---------------------------------------+
+; Parameter Name     ; Value            ; Type                                  ;
++--------------------+------------------+---------------------------------------+
+; LPM_WIDTH          ; 7                ; Signed Integer                        ;
+; LPM_CVALUE         ; 63               ; Untyped                               ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                               ;
+; CBXI_PARAMETER     ; lpm_constant_ba4 ; Untyped                               ;
++--------------------+------------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_div:inst1|LPM_CONSTANT:inst6 ;
++--------------------+------------------+---------------------------------------+
+; Parameter Name     ; Value            ; Type                                  ;
++--------------------+------------------+---------------------------------------+
+; LPM_WIDTH          ; 7                ; Untyped                               ;
+; LPM_CVALUE         ; 127              ; Untyped                               ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                               ;
+; CBXI_PARAMETER     ; lpm_constant_fa4 ; Untyped                               ;
++--------------------+------------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|LPM_MUX:inst4 ;
++------------------------+--------------+--------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                         ;
++------------------------+--------------+--------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                               ;
+; LPM_WIDTH              ; 8            ; Untyped                                                      ;
+; LPM_SIZE               ; 2            ; Untyped                                                      ;
+; LPM_WIDTHS             ; 1            ; Untyped                                                      ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                      ;
+; CBXI_PARAMETER         ; mux_erc      ; Untyped                                                      ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                      ;
++------------------------+--------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|LPM_INV:inst2 ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; LPM_WIDTH      ; 8     ; Untyped                                                                                 ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|LPM_CONSTANT:inst4 ;
++--------------------+------------------+-------------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                          ;
++--------------------+------------------+-------------------------------------------------------------------------------+
+; LPM_WIDTH          ; 8                ; Untyped                                                                       ;
+; LPM_CVALUE         ; 1                ; Untyped                                                                       ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                       ;
+; CBXI_PARAMETER     ; lpm_constant_k84 ; Untyped                                                                       ;
++--------------------+------------------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|LPM_MUX:inst5 ;
++------------------------+--------------+--------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                         ;
++------------------------+--------------+--------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                               ;
+; LPM_WIDTH              ; 8            ; Untyped                                                      ;
+; LPM_SIZE               ; 2            ; Untyped                                                      ;
+; LPM_WIDTHS             ; 1            ; Untyped                                                      ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                      ;
+; CBXI_PARAMETER         ; mux_erc      ; Untyped                                                      ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                      ;
++------------------------+--------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9|LPM_MUX:inst4 ;
++------------------------+--------------+-------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                        ;
++------------------------+--------------+-------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                              ;
+; LPM_WIDTH              ; 8            ; Untyped                                                     ;
+; LPM_SIZE               ; 2            ; Untyped                                                     ;
+; LPM_WIDTHS             ; 1            ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                     ;
+; CBXI_PARAMETER         ; mux_erc      ; Untyped                                                     ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                     ;
++------------------------+--------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9|8BSub:inst3|LPM_INV:inst2 ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; LPM_WIDTH      ; 8     ; Untyped                                                                                ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9|8BSub:inst3|LPM_CONSTANT:inst4 ;
++--------------------+------------------+------------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                         ;
++--------------------+------------------+------------------------------------------------------------------------------+
+; LPM_WIDTH          ; 8                ; Untyped                                                                      ;
+; LPM_CVALUE         ; 1                ; Untyped                                                                      ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                      ;
+; CBXI_PARAMETER     ; lpm_constant_k84 ; Untyped                                                                      ;
++--------------------+------------------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst9|LPM_MUX:inst5 ;
++------------------------+--------------+-------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                        ;
++------------------------+--------------+-------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                              ;
+; LPM_WIDTH              ; 8            ; Untyped                                                     ;
+; LPM_SIZE               ; 2            ; Untyped                                                     ;
+; LPM_WIDTHS             ; 1            ; Untyped                                                     ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                     ;
+; CBXI_PARAMETER         ; mux_erc      ; Untyped                                                     ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                     ;
++------------------------+--------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12|LPM_MUX:inst4 ;
++------------------------+--------------+--------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                         ;
++------------------------+--------------+--------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                               ;
+; LPM_WIDTH              ; 8            ; Untyped                                                      ;
+; LPM_SIZE               ; 2            ; Untyped                                                      ;
+; LPM_WIDTHS             ; 1            ; Untyped                                                      ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                      ;
+; CBXI_PARAMETER         ; mux_erc      ; Untyped                                                      ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                      ;
++------------------------+--------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12|8BSub:inst3|LPM_INV:inst2 ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; LPM_WIDTH      ; 8     ; Untyped                                                                                 ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12|8BSub:inst3|LPM_CONSTANT:inst4 ;
++--------------------+------------------+-------------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                          ;
++--------------------+------------------+-------------------------------------------------------------------------------+
+; LPM_WIDTH          ; 8                ; Untyped                                                                       ;
+; LPM_CVALUE         ; 1                ; Untyped                                                                       ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                       ;
+; CBXI_PARAMETER     ; lpm_constant_k84 ; Untyped                                                                       ;
++--------------------+------------------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst12|LPM_MUX:inst5 ;
++------------------------+--------------+--------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                         ;
++------------------------+--------------+--------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                               ;
+; LPM_WIDTH              ; 8            ; Untyped                                                      ;
+; LPM_SIZE               ; 2            ; Untyped                                                      ;
+; LPM_WIDTHS             ; 1            ; Untyped                                                      ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                      ;
+; CBXI_PARAMETER         ; mux_erc      ; Untyped                                                      ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                      ;
++------------------------+--------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst|LPM_MUX:inst4 ;
++------------------------+--------------+------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                       ;
++------------------------+--------------+------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                               ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                             ;
+; LPM_WIDTH              ; 8            ; Untyped                                                    ;
+; LPM_SIZE               ; 2            ; Untyped                                                    ;
+; LPM_WIDTHS             ; 1            ; Untyped                                                    ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                    ;
+; CBXI_PARAMETER         ; mux_erc      ; Untyped                                                    ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                    ;
++------------------------+--------------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst|8BSub:inst3|LPM_INV:inst2 ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; LPM_WIDTH      ; 8     ; Untyped                                                                               ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst|8BSub:inst3|LPM_CONSTANT:inst4 ;
++--------------------+------------------+-----------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                        ;
++--------------------+------------------+-----------------------------------------------------------------------------+
+; LPM_WIDTH          ; 8                ; Untyped                                                                     ;
+; LPM_CVALUE         ; 1                ; Untyped                                                                     ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                     ;
+; CBXI_PARAMETER     ; lpm_constant_k84 ; Untyped                                                                     ;
++--------------------+------------------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst|LPM_MUX:inst5 ;
++------------------------+--------------+------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                       ;
++------------------------+--------------+------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                               ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                             ;
+; LPM_WIDTH              ; 8            ; Untyped                                                    ;
+; LPM_SIZE               ; 2            ; Untyped                                                    ;
+; LPM_WIDTHS             ; 1            ; Untyped                                                    ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                    ;
+; CBXI_PARAMETER         ; mux_erc      ; Untyped                                                    ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                    ;
++------------------------+--------------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst4 ;
++--------------------+------------------+----------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                               ;
++--------------------+------------------+----------------------------------------------------+
+; LPM_WIDTH          ; 8                ; Untyped                                            ;
+; LPM_CVALUE         ; 0                ; Untyped                                            ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                            ;
+; CBXI_PARAMETER     ; lpm_constant_j84 ; Untyped                                            ;
++--------------------+------------------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst5 ;
++--------------------+------------------+----------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                               ;
++--------------------+------------------+----------------------------------------------------+
+; LPM_WIDTH          ; 8                ; Untyped                                            ;
+; LPM_CVALUE         ; 64               ; Untyped                                            ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                            ;
+; CBXI_PARAMETER     ; lpm_constant_n84 ; Untyped                                            ;
++--------------------+------------------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst6 ;
++--------------------+------------------+----------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                               ;
++--------------------+------------------+----------------------------------------------------+
+; LPM_WIDTH          ; 8                ; Untyped                                            ;
+; LPM_CVALUE         ; 16               ; Untyped                                            ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                            ;
+; CBXI_PARAMETER     ; lpm_constant_l84 ; Untyped                                            ;
++--------------------+------------------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst7 ;
++--------------------+------------------+----------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                               ;
++--------------------+------------------+----------------------------------------------------+
+; LPM_WIDTH          ; 8                ; Untyped                                            ;
+; LPM_CVALUE         ; 4                ; Untyped                                            ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                            ;
+; CBXI_PARAMETER     ; lpm_constant_o84 ; Untyped                                            ;
++--------------------+------------------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst8 ;
++--------------------+------------------+----------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                               ;
++--------------------+------------------+----------------------------------------------------+
+; LPM_WIDTH          ; 8                ; Untyped                                            ;
+; LPM_CVALUE         ; 1                ; Untyped                                            ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                            ;
+; CBXI_PARAMETER     ; lpm_constant_k84 ; Untyped                                            ;
++--------------------+------------------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_MUX:inst11 ;
++------------------------+--------------+---------------------+
+; Parameter Name         ; Value        ; Type                ;
++------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTH              ; 28           ; Untyped             ;
+; LPM_SIZE               ; 2            ; Untyped             ;
+; LPM_WIDTHS             ; 1            ; Untyped             ;
+; LPM_PIPELINE           ; 0            ; Untyped             ;
+; CBXI_PARAMETER         ; mux_0tc      ; Untyped             ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped             ;
++------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_display5b:inst3|ULA_display_sig:inst2|LPM_MUX:inst8 ;
++------------------------+--------------+--------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                         ;
++------------------------+--------------+--------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                               ;
+; LPM_WIDTH              ; 7            ; Untyped                                                      ;
+; LPM_SIZE               ; 2            ; Untyped                                                      ;
+; LPM_WIDTHS             ; 1            ; Untyped                                                      ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                      ;
+; CBXI_PARAMETER         ; mux_drc      ; Untyped                                                      ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                      ;
++------------------------+--------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_display5b:inst3|ULA_display_sig:inst2|LPM_CONSTANT:inst7 ;
++--------------------+------------------+-------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                              ;
++--------------------+------------------+-------------------------------------------------------------------+
+; LPM_WIDTH          ; 7                ; Signed Integer                                                    ;
+; LPM_CVALUE         ; 63               ; Untyped                                                           ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                           ;
+; CBXI_PARAMETER     ; lpm_constant_ba4 ; Untyped                                                           ;
++--------------------+------------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_display5b:inst3|ULA_display_sig:inst2|LPM_CONSTANT:inst6 ;
++--------------------+------------------+-------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                              ;
++--------------------+------------------+-------------------------------------------------------------------+
+; LPM_WIDTH          ; 7                ; Untyped                                                           ;
+; LPM_CVALUE         ; 127              ; Untyped                                                           ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                           ;
+; CBXI_PARAMETER     ; lpm_constant_fa4 ; Untyped                                                           ;
++--------------------+------------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_display5b:inst5|ULA_display_sig:inst2|LPM_MUX:inst8 ;
++------------------------+--------------+--------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                         ;
++------------------------+--------------+--------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                               ;
+; LPM_WIDTH              ; 7            ; Untyped                                                      ;
+; LPM_SIZE               ; 2            ; Untyped                                                      ;
+; LPM_WIDTHS             ; 1            ; Untyped                                                      ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                      ;
+; CBXI_PARAMETER         ; mux_drc      ; Untyped                                                      ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                      ;
++------------------------+--------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_display5b:inst5|ULA_display_sig:inst2|LPM_CONSTANT:inst7 ;
++--------------------+------------------+-------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                              ;
++--------------------+------------------+-------------------------------------------------------------------+
+; LPM_WIDTH          ; 7                ; Signed Integer                                                    ;
+; LPM_CVALUE         ; 63               ; Untyped                                                           ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                           ;
+; CBXI_PARAMETER     ; lpm_constant_ba4 ; Untyped                                                           ;
++--------------------+------------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_display5b:inst5|ULA_display_sig:inst2|LPM_CONSTANT:inst6 ;
++--------------------+------------------+-------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                              ;
++--------------------+------------------+-------------------------------------------------------------------+
+; LPM_WIDTH          ; 7                ; Untyped                                                           ;
+; LPM_CVALUE         ; 127              ; Untyped                                                           ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                           ;
+; CBXI_PARAMETER     ; lpm_constant_fa4 ; Untyped                                                           ;
++--------------------+------------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 68                          ;
+; cycloneiii_lcell_comb ; 260                         ;
+;     normal            ; 260                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 28                          ;
+;         3 data inputs ; 45                          ;
+;         4 data inputs ; 186                         ;
+;                       ;                             ;
+; Max LUT depth         ; 14.00                       ;
+; Average LUT depth     ; 8.34                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
+    Info: Processing started: Wed Jun 19 11:21:21 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ULA -c ULA
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (12125): Using design file ula.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ULA
+Info (12127): Elaborating entity "ULA" for the top level hierarchy
+Info (12128): Elaborating entity "LPM_MUX" for hierarchy "LPM_MUX:inst4"
+Info (12130): Elaborated megafunction instantiation "LPM_MUX:inst4"
+Info (12133): Instantiated megafunction "LPM_MUX:inst4" with the following parameter:
+    Info (12134): Parameter "LPM_SIZE" = "4"
+    Info (12134): Parameter "LPM_WIDTH" = "28"
+    Info (12134): Parameter "LPM_WIDTHS" = "2"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_3tc.tdf
+    Info (12023): Found entity 1: mux_3tc
+Info (12128): Elaborating entity "mux_3tc" for hierarchy "LPM_MUX:inst4|mux_3tc:auto_generated"
+Warning (12125): Using design file ula_adder.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ULA_adder
+Info (12128): Elaborating entity "ULA_adder" for hierarchy "ULA_adder:inst"
+Warning (12125): Using design file ula_display.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ULA_display
+Info (12128): Elaborating entity "ULA_display" for hierarchy "ULA_adder:inst|ULA_display:inst9"
+Warning (12125): Using design file display.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Display
+Info (12128): Elaborating entity "Display" for hierarchy "ULA_adder:inst|ULA_display:inst9|Display:inst"
+Warning (12125): Using design file ula_comp.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ULA_comp
+Info (12128): Elaborating entity "ULA_comp" for hierarchy "ULA_adder:inst|ULA_comp:inst20"
+Warning (12125): Using design file comp12.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Comp12
+Info (12128): Elaborating entity "Comp12" for hierarchy "ULA_adder:inst|ULA_comp:inst20|Comp12:inst"
+Warning (12125): Using design file comp2adder.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Comp2Adder
+Info (12128): Elaborating entity "Comp2Adder" for hierarchy "ULA_adder:inst|ULA_comp:inst20|Comp12:inst|Comp2Adder:inst4"
+Warning (12125): Using design file fulladder.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: FullAdder
+Info (12128): Elaborating entity "FullAdder" for hierarchy "ULA_adder:inst|ULA_comp:inst20|Comp12:inst|Comp2Adder:inst4|FullAdder:inst4"
+Info (12128): Elaborating entity "XOR3" for hierarchy "ULA_adder:inst|ULA_comp:inst20|Comp12:inst|Comp2Adder:inst4|FullAdder:inst4|XOR3:inst"
+Info (12130): Elaborated megafunction instantiation "ULA_adder:inst|ULA_comp:inst20|Comp12:inst|Comp2Adder:inst4|FullAdder:inst4|XOR3:inst"
+Warning (12125): Using design file adder_5.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: adder_5
+Info (12128): Elaborating entity "adder_5" for hierarchy "ULA_adder:inst|adder_5:inst"
+Info (12128): Elaborating entity "LPM_MUX" for hierarchy "ULA_adder:inst|LPM_MUX:inst8"
+Info (12130): Elaborated megafunction instantiation "ULA_adder:inst|LPM_MUX:inst8"
+Info (12133): Instantiated megafunction "ULA_adder:inst|LPM_MUX:inst8" with the following parameter:
+    Info (12134): Parameter "LPM_SIZE" = "2"
+    Info (12134): Parameter "LPM_WIDTH" = "7"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_drc.tdf
+    Info (12023): Found entity 1: mux_drc
+Info (12128): Elaborating entity "mux_drc" for hierarchy "ULA_adder:inst|LPM_MUX:inst8|mux_drc:auto_generated"
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "ULA_adder:inst|LPM_CONSTANT:inst7"
+Info (12130): Elaborated megafunction instantiation "ULA_adder:inst|LPM_CONSTANT:inst7"
+Info (12133): Instantiated megafunction "ULA_adder:inst|LPM_CONSTANT:inst7" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "63"
+    Info (12134): Parameter "LPM_WIDTH" = "7"
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "ULA_adder:inst|LPM_CONSTANT:inst6"
+Info (12130): Elaborated megafunction instantiation "ULA_adder:inst|LPM_CONSTANT:inst6"
+Info (12133): Instantiated megafunction "ULA_adder:inst|LPM_CONSTANT:inst6" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "127"
+    Info (12134): Parameter "LPM_WIDTH" = "7"
+Warning (12125): Using design file ula_mult.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ULA_mult
+Info (12128): Elaborating entity "ULA_mult" for hierarchy "ULA_mult:inst7"
+Warning (12125): Using design file 4bmult.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 4BMult
+Info (12128): Elaborating entity "4BMult" for hierarchy "ULA_mult:inst7|4BMult:inst2"
+Warning (12125): Using design file 4bmadder.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 4BMAdder
+Info (12128): Elaborating entity "4BMAdder" for hierarchy "ULA_mult:inst7|4BMult:inst2|4BMAdder:inst"
+Warning (12125): Using design file fulladderand.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: FullAdderAnd
+Info (12128): Elaborating entity "FullAdderAnd" for hierarchy "ULA_mult:inst7|4BMult:inst2|4BMAdder:inst|FullAdderAnd:inst"
+Warning (12125): Using design file ula_div.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ULA_div
+Info (12128): Elaborating entity "ULA_div" for hierarchy "ULA_div:inst1"
+Warning (12125): Using design file divider.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Divider
+Info (12128): Elaborating entity "Divider" for hierarchy "ULA_div:inst1|Divider:inst2"
+Warning (12125): Using design file 4bitsubmux.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 4BITSubMux
+Info (12128): Elaborating entity "4BITSubMux" for hierarchy "ULA_div:inst1|Divider:inst2|4BITSubMux:inst3"
+Warning (12125): Using design file multiplexer.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Multiplexer
+Info (12128): Elaborating entity "Multiplexer" for hierarchy "ULA_div:inst1|Divider:inst2|4BITSubMux:inst3|Multiplexer:inst4"
+Warning (12125): Using design file ula_sqrt.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ULA_sqrt
+Info (12128): Elaborating entity "ULA_sqrt" for hierarchy "ULA_sqrt:inst2"
+Warning (12125): Using design file 8bsqrt.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 8BSqrt
+Info (12128): Elaborating entity "8BSqrt" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst"
+Warning (12125): Using design file 8bsqrt2.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 8BSqrt2
+Info (12128): Elaborating entity "8BSqrt2" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10"
+Info (12128): Elaborating entity "LPM_MUX" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|LPM_MUX:inst4"
+Info (12130): Elaborated megafunction instantiation "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|LPM_MUX:inst4"
+Info (12133): Instantiated megafunction "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|LPM_MUX:inst4" with the following parameter:
+    Info (12134): Parameter "LPM_SIZE" = "2"
+    Info (12134): Parameter "LPM_WIDTH" = "8"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_erc.tdf
+    Info (12023): Found entity 1: mux_erc
+Info (12128): Elaborating entity "mux_erc" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|LPM_MUX:inst4|mux_erc:auto_generated"
+Warning (12125): Using design file 8bsub.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 8BSub
+Info (12128): Elaborating entity "8BSub" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3"
+Warning (12125): Using design file 8badder.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 8BAdder
+Info (12128): Elaborating entity "8BAdder" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|8BAdder:inst1"
+Info (12128): Elaborating entity "LPM_INV" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|LPM_INV:inst2"
+Info (12130): Elaborated megafunction instantiation "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|LPM_INV:inst2"
+Info (12133): Instantiated megafunction "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|LPM_INV:inst2" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "8"
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|LPM_CONSTANT:inst4"
+Info (12130): Elaborated megafunction instantiation "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|LPM_CONSTANT:inst4"
+Info (12133): Instantiated megafunction "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BSub:inst3|LPM_CONSTANT:inst4" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "1"
+    Info (12134): Parameter "LPM_WIDTH" = "8"
+Warning (12125): Using design file 8bshiftr1.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 8BShiftr1
+Info (12128): Elaborating entity "8BShiftr1" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|8BShiftr1:inst7"
+Info (12128): Elaborating entity "LPM_MUX" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|LPM_MUX:inst5"
+Info (12130): Elaborated megafunction instantiation "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|LPM_MUX:inst5"
+Info (12133): Instantiated megafunction "ULA_sqrt:inst2|8BSqrt:inst|8BSqrt2:inst10|LPM_MUX:inst5" with the following parameter:
+    Info (12134): Parameter "LPM_SIZE" = "2"
+    Info (12134): Parameter "LPM_WIDTH" = "8"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst4"
+Info (12130): Elaborated megafunction instantiation "ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst4"
+Info (12133): Instantiated megafunction "ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst4" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "0"
+    Info (12134): Parameter "LPM_WIDTH" = "8"
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst5"
+Info (12130): Elaborated megafunction instantiation "ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst5"
+Info (12133): Instantiated megafunction "ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst5" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "64"
+    Info (12134): Parameter "LPM_WIDTH" = "8"
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst6"
+Info (12130): Elaborated megafunction instantiation "ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst6"
+Info (12133): Instantiated megafunction "ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst6" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "16"
+    Info (12134): Parameter "LPM_WIDTH" = "8"
+Info (12128): Elaborating entity "LPM_CONSTANT" for hierarchy "ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst7"
+Info (12130): Elaborated megafunction instantiation "ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst7"
+Info (12133): Instantiated megafunction "ULA_sqrt:inst2|8BSqrt:inst|LPM_CONSTANT:inst7" with the following parameter:
+    Info (12134): Parameter "LPM_CVALUE" = "4"
+    Info (12134): Parameter "LPM_WIDTH" = "8"
+Info (12128): Elaborating entity "LPM_MUX" for hierarchy "LPM_MUX:inst11"
+Info (12130): Elaborated megafunction instantiation "LPM_MUX:inst11"
+Info (12133): Instantiated megafunction "LPM_MUX:inst11" with the following parameter:
+    Info (12134): Parameter "LPM_SIZE" = "2"
+    Info (12134): Parameter "LPM_WIDTH" = "28"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_0tc.tdf
+    Info (12023): Found entity 1: mux_0tc
+Info (12128): Elaborating entity "mux_0tc" for hierarchy "LPM_MUX:inst11|mux_0tc:auto_generated"
+Warning (12125): Using design file ula_display5b.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ULA_display5b
+Info (12128): Elaborating entity "ULA_display5b" for hierarchy "ULA_display5b:inst3"
+Warning (12125): Using design file ula_display_sig.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ULA_display_sig
+Info (12128): Elaborating entity "ULA_display_sig" for hierarchy "ULA_display5b:inst3|ULA_display_sig:inst2"
+Info (13014): Ignored 6 buffer(s)
+    Info (13015): Ignored 6 CARRY buffer(s)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "hex5[5]" is stuck at VCC
+    Warning (13410): Pin "hex5[4]" is stuck at VCC
+    Warning (13410): Pin "hex5[3]" is stuck at VCC
+    Warning (13410): Pin "hex5[2]" is stuck at VCC
+    Warning (13410): Pin "hex5[1]" is stuck at VCC
+    Warning (13410): Pin "hex5[0]" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 327 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 56 output pins
+    Info (21061): Implemented 259 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 4809 megabytes
+    Info: Processing ended: Wed Jun 19 11:21:38 2019
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:24
+
+
