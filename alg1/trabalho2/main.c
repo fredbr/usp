@@ -115,5 +115,11 @@ Carro fila_topo(Fila *f) {
 }
 
 void fila_pop(Fila *f) {
-	f->
+	FilaNo *aux = f->inicio;
+	f->inicio = f->inicio->prox;
+	aux->ant->prox = f->inicio;
+	f->inicio->ant = aux->ant;
+
+	free(aux);
 }
+
