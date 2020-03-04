@@ -21,6 +21,13 @@ public class Exercicio7 {
         double l = in.nextDouble();
         double r = in.nextDouble();
 
+        if (sinal(eval(l))*sinal(eval(r)) == 1) {
+        	// f(l) < 0 e f(r) < 0 ou
+        	// f(l) > 0 e f(r) > 0
+        	System.out.printf("solucao nao econtrada no intervalo [l,r]\n");
+        	return;
+        }
+
         int num_iter = 0;
         while (num_iter <= max_iters) {
             double m = (l+r)/2;
@@ -39,10 +46,7 @@ public class Exercicio7 {
             }
         }
 
-        if (num_iter > max_iters || Math.abs(eval(l)) >= eps) System.out.println("solucao nao encontrada no intervalo");
-        else {
-            System.out.printf("x = %f\n", l);
-            System.out.printf("num_iters = %d\n", num_iter);
-        }
+        System.out.printf("x = %f\n", l);
+        System.out.printf("numero de iteracoes = %d\n", num_iter);
     }
 }

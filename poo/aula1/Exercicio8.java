@@ -9,7 +9,7 @@ public class Exercicio8 {
     }
 
     static double eval2(double x) {
-        return 3*x*x - 2*x -13;
+        return 3*x*x - 2*x - 13;
     }
 
     public static void main(String[] args) throws IOException {
@@ -21,14 +21,18 @@ public class Exercicio8 {
         int num_iter = 0;
         do {
             lx = x;
+
+            if (eval2(x) == 0) {
+                // derivada igual a 0
+                System.out.printf("solucao nao encontrada\n");
+                return;
+            }
+
             x = lx - eval(lx)/eval2(lx);
             num_iter++;
         } while (Math.abs(lx - x) >= eps);
 
-        if (Math.abs(eval(x)) >= eps) System.out.println("solucao nao encontrada");
-        else {
-            System.out.printf("x = %f\n", x);
-            System.out.printf("num_iters = %d\n", num_iter);
-        }
+        System.out.printf("x = %f\n", x);
+        System.out.printf("numero de iteracoes = %d\n", num_iter);
     }
 }
