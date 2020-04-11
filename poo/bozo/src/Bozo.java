@@ -12,9 +12,8 @@ public class Bozo {
 	    	System.out.print("Pressione [ENTER] para comecar a rodada\n");
 	    	String tmp = in.leString();
 
-	    	int[] valores;
-
-	    	valores = dados.rolar();
+	    	int[] valores = dados.rolar();
+	    	
 	    	System.out.print(dados.toString());
 
 	    	for (int tentativa = 1; tentativa >= 0; tentativa--) {

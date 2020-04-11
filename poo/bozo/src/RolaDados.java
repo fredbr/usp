@@ -67,6 +67,7 @@ public class RolaDados {
         return b;
     }
 
+    // junta duas strings horizontalmente
     private String concatenateDado(String a, String b) {
         String[] lr = a.split("\n");
         String[] rr = b.split("\n");

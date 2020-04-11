@@ -42,6 +42,7 @@ public class Placar {
     }
 
     private String stringPosicao(int posicao) {
+    	// StringBuilder para evitar a construcao de strings desnecessarias
         StringBuilder build = new StringBuilder();
 
         if (!ocupado[posicao-1]) {
@@ -56,6 +57,7 @@ public class Placar {
 
     @Override
     public String toString() {
+    	// StringBuilder para evitar a construcao de strings desnecessarias
         StringBuilder build = new StringBuilder();
         build.append(String.format("   %-5s|", stringPosicao(1)));
         build.append(String.format("   %-5s|", stringPosicao(7)));
