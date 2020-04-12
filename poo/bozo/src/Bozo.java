@@ -35,7 +35,7 @@ public class Bozo {
 	    	System.out.printf("%s\n\n", placar.toString());
 		}
 
-	    System.out.print("Fim do jogo!");
+	    System.out.print("Fim do jogo!\n");
 	    System.out.printf("Pontuacao ; %d pontos\n", placar.getScore());
 
     }
