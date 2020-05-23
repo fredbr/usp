@@ -27,7 +27,7 @@ public class Dado {
 
     @Override
     public String toString() {
-    	// StringBuilder para evitar a construcao de string desnecessarias
+        // StringBuilder para evitar a construcao de string desnecessarias
         StringBuilder res = new StringBuilder();
         res.append("+-----+\n");
         if (resposta == 1) {

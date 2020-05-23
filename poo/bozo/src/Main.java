@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class Bozo {
+public class Main {
 
     public static void main(String[] args) throws IOException {
 	    EntradaTeclado in = new EntradaTeclado();
