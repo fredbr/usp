@@ -6,6 +6,7 @@
 #define HEADER_SIZE 128
 #define HEADER_USED 17
 
+// representacao intermediaria do cabecalho
 struct Header {
     char status;
     int RNNproxRegistro;
@@ -14,6 +15,7 @@ struct Header {
     int numeroRegistrosAtualizados;
 };
 
+// funcoes auxiliares para manipulacao do cabecalho
 void read_header(FILE*, struct Header*);
 void write_header(FILE*, struct Header*);
 

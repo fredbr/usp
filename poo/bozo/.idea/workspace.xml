@@ -20,26 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7282ed7-648d-49c7-94d0-cd1e8121c514" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/PlacarTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/RandomTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bozo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bozo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/Bozo.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Bozo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/Dado.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Dado.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/allclasses-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/allclasses-noframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/class-use/Bozo.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/class-use/Bozo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/bozo/META-INF/bozo.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/bozo/META-INF/bozo.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bozo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bozo.zip" beforeDir="false" afterPath="$PROJECT_DIR$/bozo.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,22 +193,22 @@
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="640" y="261" key="FileChooserDialogImpl/0.0.1920.1035@0.0.1920.1035" timestamp="1590189882870" />
-    <state width="1874" height="272" key="GridCell.Tab.0.bottom" timestamp="1590269035510">
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom" timestamp="1590271845816">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1035@0.0.1920.1035" timestamp="1590269035510" />
-    <state width="1874" height="272" key="GridCell.Tab.0.center" timestamp="1590269035509">
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1035@0.0.1920.1035" timestamp="1590271845816" />
+    <state width="1874" height="272" key="GridCell.Tab.0.center" timestamp="1590271845815">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.center/0.0.1920.1035@0.0.1920.1035" timestamp="1590269035509" />
-    <state width="1874" height="272" key="GridCell.Tab.0.left" timestamp="1590269035508">
+    <state width="1874" height="272" key="GridCell.Tab.0.center/0.0.1920.1035@0.0.1920.1035" timestamp="1590271845815" />
+    <state width="1874" height="272" key="GridCell.Tab.0.left" timestamp="1590271845814">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.left/0.0.1920.1035@0.0.1920.1035" timestamp="1590269035508" />
-    <state width="1874" height="272" key="GridCell.Tab.0.right" timestamp="1590269035509">
+    <state width="1874" height="272" key="GridCell.Tab.0.left/0.0.1920.1035@0.0.1920.1035" timestamp="1590271845814" />
+    <state width="1874" height="272" key="GridCell.Tab.0.right" timestamp="1590271845815">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.right/0.0.1920.1035@0.0.1920.1035" timestamp="1590269035509" />
+    <state width="1874" height="272" key="GridCell.Tab.0.right/0.0.1920.1035@0.0.1920.1035" timestamp="1590271845815" />
     <state width="1874" height="336" key="GridCell.Tab.1.bottom" timestamp="1590190675878">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
