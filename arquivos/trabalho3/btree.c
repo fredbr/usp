@@ -1,0 +1,431 @@
+#include "btree.h"
+
+// writes the header of the b-tree
+void btree_writeHeader(FILE* f, HeaderBTree *ht) {
+    fseek(f, 0, SEEK_SET);
+
+    fwrite(&ht->status, sizeof(ht->status), 1, f);
+    fwrite(&ht->noRaiz, sizeof(ht->noRaiz), 1, f);
+    fwrite(&ht->nroNiveis, sizeof(ht->nroNiveis), 1, f);
+    fwrite(&ht->proxRNN, sizeof(ht->proxRNN), 1, f);
+    fwrite(&ht->nroChaves, sizeof(ht->nroChaves), 1, f);
+    
+    // fill the rest of diskpage
+    for (int i = 0; i < BTREE_OFFSET - BTREE_HEADER_OFFSET; i++) {
+        fwrite("$", 1, 1, f);
+    }
+}
+
+// reads the header
+HeaderBTree btree_loadHeader(FILE* f) {
+    fseek(f, 0, SEEK_SET);
+
+    HeaderBTree ht;
+
+    fread(&ht.status, sizeof(char), 1, f);
+    fread(&ht.noRaiz, sizeof(int), 1, f);
+    fread(&ht.nroNiveis, sizeof(int), 1, f);
+    fread(&ht.proxRNN, sizeof(int), 1, f);
+    fread(&ht.nroChaves, sizeof(int), 1, f);
+    return ht;
+}
+
+// writes a page of the b-tree
+void btree_writePage(FILE* f, int rnn, DataBTree dt) {
+    fseek(f, BTREE_OFFSET * (rnn + 1), SEEK_SET);
+
+    fwrite(&dt.nivel, sizeof(dt.nivel), 1, f);
+    fwrite(&dt.n, sizeof(dt.n), 1, f);
+    
+    for (int i = 0; i < M-1; i++) {
+        fwrite(&dt.child[i].C, sizeof(dt.child[i].C), 1, f);
+        fwrite(&dt.child[i].Pr, sizeof(dt.child[i].Pr), 1, f);
+    }
+    for (int i = 0; i < M; i++) {
+        fwrite(&dt.P[i], sizeof(dt.P[i]), 1, f);
+    }
+}
+
+// reads a page at index rnn
+DataBTree btree_readRegister(FILE* f, int rnn) {
+    DataBTree dt;
+
+    fseek(f, BTREE_OFFSET * (rnn + 1), SEEK_SET);
+
+    fread(&dt.nivel, sizeof(dt.nivel), 1, f);
+    if (feof(f)) { // end of file, just return some trash
+        return dt;
+    }
+
+    fread(&dt.n, sizeof(dt.n), 1, f);
+    if (feof(f)) { // end of file, just return some trash
+        return dt;
+    }
+    
+    for (int i = 0; i < M - 1; i++) {
+        fread(&dt.child[i].C, sizeof(dt.child[i].C), 1, f);
+        fread(&dt.child[i].Pr, sizeof(dt.child[i].Pr), 1, f);
+    }
+
+    for (int i = 0; i < M; i++) {
+        fread(&dt.P[i], sizeof(dt.P[i]), 1, f);
+    }
+
+    return dt;
+}
+
+// helper struct to return promoted value
+typedef struct {
+    int P;
+    int C;
+    int Pr;
+} Promote;
+
+
+// function to insert register
+Promote btree_insertRegisterInner(FILE* f, int key, int offset, int node, HeaderBTree* h) {
+    // reads the current page
+    DataBTree dt = btree_readRegister(f, node);
+
+    // promote index, in case of split
+    Promote promote;
+    promote.P = -1;
+    promote.C = -1;
+    promote.Pr = -1;
+    
+    // insertion position
+    int inserted = -1;
+
+    // is leaf and has space
+    if (dt.nivel == 1 && dt.n < M-1) {
+    
+        // just insert, no need to split
+        int i = 0;
+        while (i < dt.n && dt.child[i].C < key) {
+            i++;
+        }
+
+        for (int j = dt.n + 1; j > i; j--) {
+            if (j < M-1) {
+                dt.child[j] = dt.child[j-1];
+            }
+            dt.P[j] = dt.P[j-1];
+        }
+
+        dt.P[i] = -1;
+        dt.child[i].C = key;
+        dt.child[i].Pr = offset;
+        dt.n++;
+
+        btree_writePage(f, node, dt);
+
+        // return null promote
+        return promote;
+    } else if (dt.nivel == 1) { // is leaf, no space
+        
+        // need to split; fill all the info
+        Promote info[M];
+        for (int i = 0, j = 0, aux = key; j < M; j++) {
+            if (i < M-1 && dt.child[i].C < aux) {
+                info[j].P = dt.P[i];
+                info[j].C = dt.child[i].C;
+                info[j].Pr = dt.child[i].Pr;
+                i++;
+            } else {
+                info[j].P = -1;
+                info[j].C = aux;
+                info[j].Pr = offset;
+                aux = __INT_MAX__; // just to make sure that the children key will be always less than aux
+            }
+        }
+
+        // promote the first element of the right child
+        promote = info[M/2];
+
+        // new data page to create
+        DataBTree dt2;
+
+        dt.nivel = 1;
+        dt2.nivel = 1;
+
+        dt.n = M/2;
+        dt2.n = (M-1)/2;
+
+        /// clear both pages
+        for (int i = 0; i < M-1; i++) {
+            dt.child[i].C = -1;
+            dt.child[i].C = -1;
+            
+            dt2.child[i].Pr = -1;
+            dt2.child[i].Pr = -1;
+        }
+
+        for (int i = 0; i < M; i++) {
+            dt.P[i] = -1;
+            dt2.P[i] = -1;
+        }
+
+        // update this dataPage, and fill the new data page with correct elements
+        for (int i = 0; i < M; i++) {
+            // update current node
+            if (i < dt.n) {
+                dt.child[i].C = info[i].C;
+                dt.child[i].Pr = info[i].Pr;
+            // create next data page
+            } else if (i > M/2) {
+                dt2.child[i-M/2-1].C = info[i].C;
+                dt2.child[i-M/2-1].Pr = info[i].Pr;
+            }
+        }
+
+        // write the updated info
+        btree_writePage(f, node, dt);
+        
+        // write new data page
+        promote.P = h->proxRNN;
+        btree_writePage(f, promote.P, dt2);
+
+        // update header
+        h->proxRNN++;
+        
+        // return
+        return promote;
+
+    // isn't leaf, find a space to insert
+    } else {
+        for (int i = 0; inserted == -1 && i < M; i++) {
+            if (i == M-1 || dt.child[i].C == -1 || dt.child[i].C > key) {
+                promote = btree_insertRegisterInner(f, key, offset, dt.P[i], h);
+                inserted = i; // update the called index
+            }
+        }
+    }
+
+    if (promote.C != -1) { // need to promote
+
+        if (dt.n < M-1) { // there is space
+
+            // position that will be inserted
+            int ins = inserted;
+
+            // just insert on the right position
+            for (int j = dt.n+1; j > ins; j--) {
+                if (j == M - 1) {
+                    dt.P[j] = dt.P[j-1];
+                } else {
+                    // dont shift if last 
+                    // new order will be Pi PromoteC PromoteP Ci
+                    if (j > ins+1) {
+                        dt.P[j] = dt.P[j-1];
+                    }
+                    dt.child[j] = dt.child[j-1];
+                }
+            }
+
+            // insert promoted value
+            dt.P[ins+1] = promote.P;
+            dt.child[ins].C = promote.C;
+            dt.child[ins].Pr = promote.Pr;
+
+            dt.n++;
+
+            btree_writePage(f, node, dt);
+
+            // return promotion values to null
+            promote.C = -1;
+            promote.P = -1;
+            promote.Pr = -1;
+        } else { // no space, has to split
+            Promote info[M+1];
+            
+            int ins = inserted;
+            // all info from current page + promoted value
+            for (int i = 0; i < M+1; i++) {
+                if (i == ins) {
+                    info[i].P = dt.P[i];
+                    info[i].C = promote.C;
+                    info[i].Pr = promote.Pr;
+                }
+                else if (i == ins+1) {
+                    info[i].P = promote.P;
+                    info[i].C = dt.child[i-1].C;
+                    info[i].Pr = dt.child[i-1].Pr;
+                }
+                else if (i < ins) {
+                    info[i].P = dt.P[i];
+                    info[i].C = dt.child[i].C;
+                    info[i].Pr = dt.child[i].Pr;
+                }
+                else {
+                    info[i].P = dt.P[i-1];
+                    info[i].C = dt.child[i-1].C;
+                    info[i].Pr = dt.child[i-1].Pr;
+                }
+            }
+
+            // will promote the mid
+            promote = info[M/2];
+
+            // new data page
+            DataBTree dt2;
+
+            // fill both pages with correct values
+            dt2.nivel = dt.nivel;
+            dt2.n = (M-1)/2;
+            dt.n = M/2;
+
+            // clear both pages
+            for (int i = 0; i < M-1; i++) {
+                dt.child[i].C = -1;
+                dt.child[i].C = -1;
+                
+                dt2.child[i].Pr = -1;
+                dt2.child[i].Pr = -1;
+            }
+
+            for (int i = 0; i < M; i++) {
+                dt.P[i] = -1;
+                dt2.P[i] = -1;
+            }
+
+            // update this dataPage, and fill the new data page with correct elements
+            for (int i = 0; i < M+1; i++) {
+                if (i < M/2) {
+                    dt.P[i] = info[i].P;
+                    dt.child[i].C = info[i].C;
+                    dt.child[i].Pr = info[i].Pr;
+                }
+                else if (i == M/2) {
+                    dt.P[i] = info[i].P;
+                }
+                else {
+                    dt2.P[i-M/2-1] = info[i].P;
+                    dt2.child[i-M/2-1].C = info[i].C;
+                    dt2.child[i-M/2-1].Pr = info[i].Pr;
+                }
+            }
+
+            // creates new data page
+            promote.P = h->proxRNN;
+
+            btree_writePage(f, node, dt);
+
+            btree_writePage(f, promote.P, dt2);
+            
+            // update header
+            h->proxRNN++;
+        }
+    }
+
+    // return promoted node
+    return promote;
+}
+
+// driver function to insert new register
+void btree_insertRegister(FILE* f, int key, int offset, HeaderBTree *header) {    
+    // invalid root - need to create a new one
+    if (header->noRaiz == -1) {
+        DataBTree dt;
+
+        // clear all elements
+        dt.n = 1;
+        dt.nivel = 1;
+
+        for (int i = 0; i < M-1; i++) {
+            dt.child[i].C = -1;
+            dt.child[i].Pr = -1;
+        }
+
+        for (int i = 0; i < M; i++) {
+            dt.P[i] = -1;
+        }
+
+        // update the first key
+        dt.child[0].C = key;
+        dt.child[0].Pr = offset;
+
+        header->noRaiz = 0;
+        header->nroNiveis = 1;
+        header->nroChaves = 1;
+        header->proxRNN = 1;
+        // update the root
+        btree_writeHeader(f, header);
+
+        // insert first disk page
+        btree_writePage(f, 0, dt);
+
+        return; // everything was done; just return
+    }
+
+    // try to insert on the old root
+    Promote promote = btree_insertRegisterInner(f, key, offset, header->noRaiz, header);
+
+    header->nroChaves++;
+
+    // need to promote a new root
+    if (promote.C != -1) {
+        DataBTree dt;
+
+        // clear all elements
+        dt.n = 1;
+        dt.nivel = header->nroNiveis + 1;
+        
+        for (int i = 1; i < M-1; i++) {
+            dt.child[i].C = -1;
+            dt.child[i].Pr = -1;
+        }
+        for (int i = 2; i < M; i++) {
+            dt.P[i] = -1;
+        }
+
+        // update with promotion info
+        dt.P[0] = header->noRaiz;
+        dt.child[0].C = promote.C;
+        dt.child[0].Pr = promote.Pr;
+        dt.P[1] = promote.P;
+
+        // write new root
+        btree_writePage(f, header->proxRNN, dt);
+
+        // update header
+        header->noRaiz = header->proxRNN;
+        header->proxRNN++;
+        header->nroNiveis++;
+    }
+
+    btree_writeHeader(f, header);
+}
+
+// finds the register offset with key
+int btree_findRegisterNode(FILE* f, int key, int node, int *cnt) {
+    // didn't find the key
+    if (node == -1) {
+        return -1;
+    }    
+
+    // read the current page
+    DataBTree dt = btree_readRegister(f, node);
+    
+    // update number of accesses
+    *cnt += 1;
+
+    // try to find on all children
+    for (int i = 0; i < M - 1; i++) {
+        if (dt.child[i].C == -1) { // first null children
+            return btree_findRegisterNode(f, key, dt.P[i], cnt);
+        } else if (dt.child[i].C == key) {
+            return dt.child[i].Pr; // return the right offset
+        } else if (dt.child[i].C > key) { // key is less than current children key
+            return btree_findRegisterNode(f, key, dt.P[i], cnt);
+        }
+    }
+
+    // recursive call to last pointer
+    return btree_findRegisterNode(f, key, dt.P[M-1], cnt);
+}
+
+// Driver function to find a register
+int btree_findRegister(FILE* f, HeaderBTree *ht, int key, int *cnt) {
+    *cnt = 0;
+    return btree_findRegisterNode(f, key, ht->noRaiz, cnt); // call starting from the root
+}
