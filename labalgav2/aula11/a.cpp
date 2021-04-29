@@ -1,0 +1,94 @@
+#include <bits/stdc++.h>
+
+#define ff first
+#define ss second
+
+#define pb push_back
+#define eb emplace_back
+#define all(x) begin(x), end(x)
+#define rall(x) rbegin(x), rend(x)
+#define clr(x, c) memset((x), (c), sizeof((x)))
+
+using namespace std;
+
+template<class T> void DBG(T&& x) { cerr << x << " "; }
+template<class T, class...Args> void DBG(T&& x, Args&&... args) { DBG(x); DBG(args...); }
+#define DBG(...) cerr << "[" << #__VA_ARGS__ << "]: "; DBG(__VA_ARGS__); cerr << endl 
+
+
+using ll = long long;
+using ii = pair<int, int>;
+
+int const inf = 0x3f3f3f3f;
+ll const linf = 0x3f3f3f3f3f3f3f3f;
+
+int const mod = 1e9 + 7;
+
+seed_seq seq {
+    (uint64_t) chrono::duration_cast<chrono::nanoseconds>(
+    	chrono::high_resolution_clock::now().
+    	time_since_epoch()).count(),
+    (uint64_t) __builtin_ia32_rdtsc(),
+    (uint64_t) random_device{}(),
+    (uint64_t) 17
+};
+
+mt19937 rd{seq};
+
+
+int const maxn = 15000001;
+
+int s[maxn];
+
+void sieve() {
+    for (int i = 2; i < maxn; i++) {
+        if (s[i] == 0) {
+            for (int j = i*2; j < maxn; j += i) {
+                s[j] = i;
+            }
+        }
+    }
+}
+
+int main() {
+	ios_base::sync_with_stdio(false), cin.tie(nullptr);
+
+    sieve();
+
+    int n;
+    cin >> n;
+
+    int g = 0;
+    vector<int> v(n);
+    for (auto& i : v) cin >> i, g = gcd(i, g);
+
+    for (auto& i : v) i /= g;
+
+    if (*max_element(all(v)) == 1) {
+        cout << -1 << '\n';
+        return 0;
+    }
+
+    vector<int> cnt(maxn);
+
+    auto factor = [&] (auto&& factor, int x) -> void {
+        if (x == 1) return;
+
+        int k = s[x];
+
+        if (k == 0) {
+            cnt[x]++;
+            return;
+        }
+
+        cnt[k]++;
+        while (x%k == 0) x /= k;
+
+        factor(factor, x);
+    };
+
+    for (auto i : v) factor(factor, i);
+
+    cout << n - *max_element(all(cnt)) << '\n';
+
+}

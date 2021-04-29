@@ -1,0 +1,121 @@
+@startuml modelo-conceitual
+
+class Notificacao{
+    String mensagem
+    DateTime dataDeCriacao
+}
+
+class NotificacaoUsuario{
+    Integer idUsuario
+}
+
+class NotificacaoRobo{
+    Integer idRobo
+}
+
+Notificacao  <|-- NotificacaoUsuario  : Herda
+Notificacao  <|-- NotificacaoRobo : Herda
+
+NotificacaoUsuario "*" -- "1" Sistema : Cria <
+NotificacaoRobo "*" -- "1" Robo : Cria <
+
+
+class Usuario {
+    String uuid
+    String email
+    String nome
+    String senha
+	AgendarLimpeza()  
+	VerEstatisticas()  
+	AdicionarRobo()  
+	RemoverRobo()  
+	RealocarRobo()  
+
+}
+Usuario "1" -- "1" Sistema : Comunica com >
+Usuario "1" -- "1" Sistema : Comunica com <
+
+class AgendamentoLimpeza {
+    Datetime inicio
+}
+AgendamentoLimpeza -- Usuario : Cria <
+AgendamentoLimpeza -- Sistema : Usa <
+
+class Mapa{
+    String uuidUsuario
+    String nome
+    Integer uuid
+    Integer matrizMapa[][]
+    Integer areaLimpeza
+}
+Robo "*" -- "1" Mapa : Utiliza >
+Sistema "*" -- "*" Mapa : Utiliza >
+
+class Robo {
+    Integer id
+    Integer nivelBateria
+    Point localizaoAtual
+    Point[] trajetoria
+    notificar(RegistroEvento): String
+    iniciarLimpeza():boolean
+    pararLimpeza():boolean
+    resumirLimpeza():boolean
+    finalizarLimpeza():boolean
+    setPlanoDeLimpeza(PlanoLimpezaRobo)
+    getDadosLimpeza():DadosLimpeza
+}
+
+class Sistema {
+    solicitarStatusRobo(Integer)
+    solicitarDadosLimpeza(Integer): DadosLimpeza
+    registrarRobo()
+    removerRobo()
+    notificarRobo(Integer)
+    notificarUsuario()
+    enviarPlanoLimpeza(PlanoDeLimpeza)
+    calcularPlanoLimpeza(Local): PlanoDeLimpeza
+    iniciarPlanoLimpeza()
+}
+
+Sistema "1" -- "1..*" Robo : Gerencia >
+
+class PlanoDeLimpeza {
+    Datetime inicio
+    Integer tipoAcao
+    Mapa trajetoriaLimpeza
+}
+PlanoDeLimpeza <|-- PlanoDeLimpezaRobo : Herda
+
+class PlanoDeLimpezaRobo {
+    Integer idRobo
+}
+
+Sistema "1" -- "*" PlanoDeLimpeza : Gera >
+Robo "1" -- "0..1" PlanoDeLimpezaRobo : Possui >
+
+class DadosLimpeza {
+    Datetime inicio
+    Datetime fim
+    String local
+    Integer gramasDeSujeira
+}
+Sistema "1" -- "*" DadosLimpeza : Utiliza >
+Robo "1" -- "1" DadosLimpeza : Possui >
+
+class TipoDeEvento{}
+Evento "1" -- TipoDeEvento : Tem >
+class Evento{}
+
+class RegistroEvento{
+    Integer idRobot
+    Date inicio
+    Date fim
+    Integer tipoDeEvento
+    String descricao
+}
+Robo "1" -- "*" RegistroEvento : Cria >
+RegistroEvento "1" -- Evento : Tem >
+
+
+@enduml
+
