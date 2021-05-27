@@ -1,0 +1,235 @@
+
+body {
+    background-image: url(../photo.jpeg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: scroll;
+    background-size: 70% 70%;
+}
+
+/* AULA 21 */
+/* #exemplo {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+
+    transition: all 2s ease-in;
+}
+
+#exemplo:hover {
+    width: 350px;
+    height: 350px;
+    background-color: grey;
+} */
+
+/* AULA 20 */
+/* #exemplo {
+    border: solid 0.5em blueviolet;
+    outline: solid 0.5em greenyellow;
+} */
+
+/* AULA 19 */
+/* #conteudo {
+    width: 600px;
+    height: 1200px;
+    background-color: red;
+}
+
+#texto {
+    width: 500px;
+    background-color: green;
+    position: fixed;
+    top: 0;
+    left: 50%;
+} */
+
+/* AULA 18 */
+/* #base {
+    background-color: black;
+    width: 600px;
+    height: 600px;
+}
+
+#esquerda {
+    background-color: red;
+    width: 300px;
+    height: 300px;
+    float: left;
+}
+
+#direita {
+    background-color: blue;
+    width: 300px;
+    height: 300px;
+    float: right;
+} */
+
+/* AULA 16-17 */
+/* #cores {
+    background: radial-gradient(#b5e550, white);
+    width: 200px;
+    height: 200px;
+} */
+
+/* AULA 13-15 */
+/* @font-face {
+    font-family: open_sans;
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+}
+
+p {
+    font-family: Pattaya;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 2.5em;
+} */
+
+/* AULA 12 */
+/* #bloco {
+    width: 300px;
+    height: 150px;
+    border-radius: 20px;
+    background-color: greenyellow;
+} */
+
+/* AULA 11 */
+/* #conteudo {
+    background-color: red;
+    width: 300px;
+    height: 50px;
+    overflow: auto;
+}
+
+#conteudo p {
+    opacity: 50%;
+} */
+
+/* AULA 10 */
+/* * {
+    box-sizing: border-box;
+}
+
+#conteudo {
+    background-color: red;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 10px 10px 5px green;
+} */
+
+
+/* AULA 8-9 */
+/* p {
+    color: aliceblue;
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: left;
+    text-decoration: overline;
+    text-indent: 20px;
+    line-height: 30px;
+    letter-spacing: 5px;
+    word-spacing: -2px;
+}
+
+h2 {
+    text-align: right;
+    text-decoration: line-through;
+}
+
+h3 {
+    text-align: justify;
+    text-transform: uppercase;
+} */
+
+/* AULA 7 */
+/* #exemplo {
+    background-color: green;
+    color: greenyellow;
+    width: 500px;
+    padding: 10px 20px 10px 20px;
+}
+
+#exemplo2 {
+    background-color: green;
+    color: greenyellow;
+    width: 300px;
+    padding: 50px 20px 50px 20px;
+    margin-top: 30px;
+} */
+
+
+/* AULA 6 */
+/* #conteudo {
+    background-color: grey;
+    color: greenyellow;
+    padding: 20px;
+    max-height: 100px;
+    min-width: 500px;
+} */
+
+
+/* AULA 5 */
+/* .texto-principal {
+    color: red;
+    text-align: center;
+}
+
+.fundo-principal {
+    background-color: gainsboro;
+    padding: 20px;
+}
+
+#conteudo {
+    background-color: blueviolet;
+    padding: 20px;
+    color: cadetblue;
+} */
+
+/* AULA 4 */
+/* h1, h2, p {
+    color: red;
+    text-align: center;
+} */
+
+/* AULA 2-3 */
+/* * {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    color: gray;
+}
+
+h1 {
+    color: green;
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 35px;
+    background-color: #ccc;
+    border: none;
+}
+
+input[type="email"] {
+    width: 200px;
+    height: 35px;
+    background-color: #ccc;
+    border: none;
+}
+
+input[type="submit"] {
+    width: 50px;
+    height: 35px;
+    background-color: grey;
+} */
+
+/* AULA 1 */
+/* h1 {
+    color: dodgerblue;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+} */

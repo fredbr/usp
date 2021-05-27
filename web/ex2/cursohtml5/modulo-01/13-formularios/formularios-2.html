@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Formulários</title>
+        <meta charset="utf-8">
+    </head>
+    
+    <body>
+        <form id="form-cadastro" method="POST" enctype="application/x-www-form-urlencoded" name="formulario-cadastro">
+            Email: <br>
+            <input type="email" name="email" required>
+            <input type="submit" name="cadastrar" value="Cadastrar" formaction="cadastrar.php" formmethod="POST" formenctype="application/x-www-form-urlencoded">
+            <input type="submit" name="enviar-por-email" value="Enviar por email" formaction="enviar-email.php" formmethod="GET" formnovalidate>
+
+        </form>
+
+        Nome: <br>
+        <input form="form-cadastro" type="text" name="nome">
+
+    </body>
+</html>

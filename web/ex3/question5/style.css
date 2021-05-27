@@ -1,0 +1,64 @@
+body {
+    background-color: lightgrey;
+}
+
+.card {
+    background-color: white;
+    border-radius: .5em;
+    box-shadow: 0.1em 0.1em 0.1em lightslategray;
+    width: 50em;
+    padding: 1em;
+    text-align: center;
+    margin: 2em auto 0 auto;
+}
+
+#img-profile {
+    vertical-align: middle;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    border: 0.2em solid lightgray;
+}
+
+li {
+    display: inline-block;
+    padding: 1em 1.5em;
+}
+
+ul {
+    padding: 0;   
+}
+
+img {
+    margin-right: 1em;
+    width: 6em;
+}
+
+h1 {
+    color: lightsalmon;
+    font-size: 1.5em;
+    margin-top: 0.3em;
+}
+
+h2 {
+    color: grey;
+    font-size: 1.2em;
+    margin: 1em;
+}
+
+h3 {
+    color: grey;
+    text-align: start;
+    line-height: 0.5em;
+}
+
+p {
+    color: rgb(165, 165, 165);
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(165, 165, 165);
+}
